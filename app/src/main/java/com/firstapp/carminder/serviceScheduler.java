@@ -2,10 +2,9 @@ package com.firstapp.carminder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class serviceScheduler extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,4 +12,3 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_service_scheduler);
     }
 }
-
