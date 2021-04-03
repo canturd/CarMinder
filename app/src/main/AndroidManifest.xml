@@ -9,14 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CarMinder">
-        <activity android:name=".serviceScheduler"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".popup"
+            android:theme="@style/Theme.CarMinder.popupTheme"
+            ></activity>
+        <activity android:name=".serviceScheduler">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

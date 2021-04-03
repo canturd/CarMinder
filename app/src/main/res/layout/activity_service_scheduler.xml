@@ -7,58 +7,64 @@
     tools:context=".serviceScheduler">
 
     <Button
-        android:id="@+id/oilChange6"
+        android:id="@+id/alignment"
         android:layout_width="227dp"
         android:layout_height="0dp"
+        android:onClick="popup"
         android:text="Alignment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/oilChange4" />
+        app:layout_constraintTop_toBottomOf="@+id/tireRotation" />
 
     <Button
-        android:id="@+id/oilChange3"
+        android:id="@+id/sparkPlugs"
         android:layout_width="227dp"
         android:layout_height="0dp"
         android:layout_marginBottom="24dp"
+        android:onClick="popup"
         android:text="Spark Plugs"
-        app:layout_constraintBottom_toTopOf="@+id/oilChange2"
+        app:layout_constraintBottom_toTopOf="@+id/tireChange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/oilChange5" />
+        app:layout_constraintTop_toBottomOf="@+id/brakes" />
 
     <Button
-        android:id="@+id/oilChange4"
+        android:id="@+id/tireRotation"
         android:layout_width="227dp"
         android:layout_height="0dp"
         android:layout_marginBottom="20dp"
+        android:onClick="popup"
         android:text="Tire Rotation"
-        app:layout_constraintBottom_toTopOf="@+id/oilChange6"
+        app:layout_constraintBottom_toTopOf="@+id/alignment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/oilChange2" />
+        app:layout_constraintTop_toBottomOf="@+id/tireChange" />
 
     <Button
-        android:id="@+id/oilChange5"
+        android:id="@+id/brakes"
         android:layout_width="227dp"
         android:layout_height="0dp"
         android:layout_marginBottom="20dp"
+        android:onClick="popup"
         android:text="Brakes"
-        app:layout_constraintBottom_toTopOf="@+id/oilChange3"
+        app:layout_constraintBottom_toTopOf="@+id/sparkPlugs"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/oilChange" />
 
     <Button
-        android:id="@+id/oilChange2"
+        android:id="@+id/tireChange"
         android:layout_width="227dp"
         android:layout_height="0dp"
         android:layout_marginBottom="25dp"
+        android:onClick="popup"
         android:text="Tire Change"
-        app:layout_constraintBottom_toTopOf="@+id/oilChange4"
+        app:layout_constraintBottom_toTopOf="@+id/tireRotation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/oilChange3" />
+        app:layout_constraintTop_toBottomOf="@+id/sparkPlugs" />
+
 
     <Button
         android:id="@+id/oilChange"
@@ -66,19 +72,20 @@
         android:layout_height="0dp"
         android:layout_marginTop="237dp"
         android:layout_marginBottom="12dp"
+        android:onClick="popup"
         android:text="Oil Change"
-        app:layout_constraintBottom_toTopOf="@+id/oilChange5"
+        app:backgroundTint="@android:color/holo_red_light"
+        app:layout_constraintBottom_toTopOf="@+id/brakes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="189dp"
         android:layout_height="381dp"
         android:layout_marginBottom="76dp"
-        app:layout_constraintBottom_toBottomOf="@+id/oilChange5"
+        app:layout_constraintBottom_toBottomOf="@+id/brakes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/carminder_logo" />
