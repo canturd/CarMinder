@@ -51,9 +51,10 @@
         app:layout_constraintBottom_toTopOf="@+id/sparkPlugs"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/oilChange" />
+        app:layout_constraintTop_toBottomOf="@+id/oilChange_button" />
 
     <Button
+
         android:id="@+id/tireChange"
         android:layout_width="227dp"
         android:layout_height="0dp"
@@ -67,15 +68,17 @@
 
 
     <Button
-        android:id="@+id/oilChange"
+        android:id="@+id/oilChange_button"
         android:layout_width="227dp"
         android:layout_height="0dp"
         android:layout_marginTop="237dp"
         android:layout_marginBottom="12dp"
+
         android:onClick="popup"
         android:text="Oil Change"
         app:backgroundTint="@android:color/holo_red_light"
         app:layout_constraintBottom_toTopOf="@+id/brakes"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -88,7 +91,9 @@
         app:layout_constraintBottom_toBottomOf="@+id/brakes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/carminder_logo" />
+        app:srcCompat="@drawable/carminder_logo"
+        android:contentDescription="@string/todo" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
