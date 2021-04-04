@@ -22,3 +22,7 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    lifecycleVersion = '2.3.1'
+}
