@@ -9,4 +9,7 @@
     <string name="todo">TODO</string>
     <string name="logo">Carminder Logo</string>
     <string name="tirestack">Stack of tires</string>
+    <string name="rec_mileage">Recommended Mileage:</string>
+    <string name="rec_part">Recommended Type:</string>
+    <string name="est_cost">Estimated Cost:</string>
 </resources>
