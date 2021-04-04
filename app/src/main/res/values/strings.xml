@@ -7,4 +7,6 @@
     <string name="spark_plugs">Spark Plugs</string>
     <string name="alignment">Alignment</string>
     <string name="todo">TODO</string>
+    <string name="logo_image">logo image</string>
+    <string name="tire_stack">stack of tires</string>
 </resources>
