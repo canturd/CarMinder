@@ -27,5 +27,7 @@ public class popup extends AppCompatActivity {
         String serviceName = intent.getStringExtra("SERVICE_NAME");
         ((TextView)findViewById(R.id.serviceName)).setText(serviceName);
 
+
+
     }
 }
