@@ -13,7 +13,6 @@
         android:text="@string/alignment"
         android:textColor="#090000"
         app:backgroundTint="#FFEB3B"
-        android:onClick="onClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
