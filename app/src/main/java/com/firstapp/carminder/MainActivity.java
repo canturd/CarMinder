@@ -3,9 +3,10 @@ package com.firstapp.carminder;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+
 
 public class MainActivity extends AppCompatActivity {
     Button button;
@@ -21,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void launch_serviceSchedule(View view) {
+        Intent serviceScheduler = new Intent(this, serviceScheduler.class);
+        startActivity(serviceScheduler);
     }
 }
 

@@ -7,64 +7,65 @@
     tools:context=".serviceScheduler">
 
     <Button
-        android:id="@+id/alignment_button"
+        android:id="@+id/alignment"
         android:layout_width="227dp"
         android:layout_height="0dp"
-        android:background="#b22222"
-        android:text="@string/alignment"
-        app:backgroundTint="#CA2020"
+        android:onClick="popup"
+        android:text="Alignment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tire_rotation_button" />
+        app:layout_constraintTop_toBottomOf="@+id/tireRotation" />
 
     <Button
-        android:id="@+id/spark_plugs_button"
+        android:id="@+id/sparkPlugs"
         android:layout_width="227dp"
         android:layout_height="0dp"
         android:layout_marginBottom="24dp"
-        android:text="@string/spark_plugs"
-        app:backgroundTint="#C11717"
-        app:layout_constraintBottom_toTopOf="@+id/tire_change_button"
+        android:onClick="popup"
+        android:text="Spark Plugs"
+        app:layout_constraintBottom_toTopOf="@+id/tireChange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/brakes_button" />
+        app:layout_constraintTop_toBottomOf="@+id/brakes" />
 
     <Button
-        android:id="@+id/tire_rotation_button"
+        android:id="@+id/tireRotation"
         android:layout_width="227dp"
         android:layout_height="0dp"
         android:layout_marginBottom="20dp"
-        android:text="@string/tire_rotation"
-        app:backgroundTint="#BD1919"
-        app:layout_constraintBottom_toTopOf="@+id/alignment_button"
+        android:onClick="popup"
+        android:text="Tire Rotation"
+        app:layout_constraintBottom_toTopOf="@+id/alignment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tire_change_button" />
+        app:layout_constraintTop_toBottomOf="@+id/tireChange" />
 
     <Button
-        android:id="@+id/brakes_button"
+        android:id="@+id/brakes"
         android:layout_width="227dp"
         android:layout_height="0dp"
         android:layout_marginBottom="20dp"
-        android:text="@string/brakes"
-        app:backgroundTint="#C11717"
-        app:layout_constraintBottom_toTopOf="@+id/spark_plugs_button"
+        android:onClick="popup"
+        android:text="Brakes"
+        app:layout_constraintBottom_toTopOf="@+id/sparkPlugs"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/oilChange_button" />
 
     <Button
-        android:id="@+id/tire_change_button"
+
+        android:id="@+id/tireChange"
         android:layout_width="227dp"
         android:layout_height="0dp"
         android:layout_marginBottom="25dp"
-        android:text="@string/tire_change"
-        app:backgroundTint="#C11E1E"
-        app:layout_constraintBottom_toTopOf="@+id/tire_rotation_button"
+        android:onClick="popup"
+        android:text="Tire Change"
+        app:layout_constraintBottom_toTopOf="@+id/tireRotation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spark_plugs_button" />
+        app:layout_constraintTop_toBottomOf="@+id/sparkPlugs" />
+
 
     <Button
         android:id="@+id/oilChange_button"
@@ -72,20 +73,22 @@
         android:layout_height="0dp"
         android:layout_marginTop="237dp"
         android:layout_marginBottom="12dp"
-        android:text="@string/oil_change"
-        app:backgroundTint="#CC1A1A"
-        app:layout_constraintBottom_toTopOf="@+id/brakes_button"
+
+        android:onClick="popup"
+        android:text="Oil Change"
+        app:backgroundTint="@android:color/holo_red_light"
+        app:layout_constraintBottom_toTopOf="@+id/brakes"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="189dp"
         android:layout_height="381dp"
         android:layout_marginBottom="76dp"
-        app:layout_constraintBottom_toBottomOf="@+id/brakes_button"
+        app:layout_constraintBottom_toBottomOf="@+id/brakes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/carminder_logo"
