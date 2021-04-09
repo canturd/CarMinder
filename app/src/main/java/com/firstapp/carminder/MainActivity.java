@@ -13,19 +13,21 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-    Button button;
+    public Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_service_scheduler);
+        setContentView(R.layout.activity_main);
 
-        button = (Button) findViewById(R.id.oilChange_button);
+        button = (Button) findViewById(R.id.addCarButton);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                addCar(v);
             }
         });
+
 
 
 
@@ -46,7 +48,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void addCar(View view) {
+        Intent addCar = new Intent(this, addCar.class);
+        startActivity(addCar);
+    }
 
+    public void garage(View view)
+    {
+        finish();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);
+    }
 
 }
 
