@@ -8,27 +8,43 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
     public Button button;
+    public ImageButton imageButton;
+    public FloatingActionButton floatingButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = (Button) findViewById(R.id.addCarButton);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        //this is the car profile button where someone could view their car info/schedule a service
+        imageButton = (ImageButton) findViewById(R.id.carProfile);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launch_serviceSchedule(v);
+            }
+        });
+
+        //this is the add car button on the Garage screen
+        floatingButton = (FloatingActionButton) findViewById(R.id.addCarButton);
+
+                floatingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 addCar(v);
             }
         });
-
-
 
 
         AutoUserDatabase db = Room.databaseBuilder(getApplicationContext(),
