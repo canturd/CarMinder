@@ -16,35 +16,36 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-    public Button button;
-    public ImageButton imageButton;
-    public FloatingActionButton floatingButton;
+//    public Button button;
+//    public ImageButton imageButton;
+//    public FloatingActionButton floatingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//I think we dont really need the listener unless you need it to do something else
 
         //this is the car profile button where someone could view their car info/schedule a service
-        imageButton = (ImageButton) findViewById(R.id.carProfile);
+//        imageButton = (ImageButton) findViewById(R.id.carProfile);
 
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launch_serviceSchedule(v);
-            }
-        });
-
-        //this is the add car button on the Garage screen
-        floatingButton = (FloatingActionButton) findViewById(R.id.addCarButton);
-
-                floatingButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addCar(v);
-            }
-        });
+//        imageButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                launch_serviceSchedule(v);
+//            }
+//        });
+//
+//        //this is the add car button on the Garage screen
+//        floatingButton = (FloatingActionButton) findViewById(R.id.addCarButton);
+//
+//                floatingButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                addCar(v);
+//            }
+//        });
 
 
         AutoUserDatabase db = Room.databaseBuilder(getApplicationContext(),
@@ -63,19 +64,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(serviceScheduler);
     }
 
-
     public void addCar(View view) {
-        Intent addCar = new Intent(this, addCar.class);
-        startActivity(addCar);
+        Intent add_car = new Intent(this, add_car.class);
+        startActivity(add_car);
     }
-
-    public void garage(View view)
-    {
-        finish();
-        Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        startActivity(intent);
-    }
+//
+//    public void garage(View view)
+//    {
+//        finish();
+//        Intent intent = new Intent(Intent.ACTION_MAIN);
+//        intent.addCategory(Intent.CATEGORY_HOME);
+//        startActivity(intent);
+//    }
 
 }
 

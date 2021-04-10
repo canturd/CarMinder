@@ -31,12 +31,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="320dp"
         android:layout_marginTop="650dp"
-        android:clickable="true"
-        android:focusable="true"
+        android:contentDescription="addCar"
         android:onClick="addCar"
         app:backgroundTint="#FFEB3B"
-        app:srcCompat="@drawable/addcar_logo"
-        android:contentDescription="addCar" />
+        app:srcCompat="@drawable/addcar_logo" />
 
     <ImageButton
         android:id="@+id/carProfile"
