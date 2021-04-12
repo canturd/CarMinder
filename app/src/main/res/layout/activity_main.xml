@@ -7,22 +7,15 @@
     android:background="#FFFFFF"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/garage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="474.5dp"
-        app:srcCompat="@drawable/garage2" />
-
     <TextView
         android:id="@+id/garage_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="95dp"
         android:text="@string/my_garage"
         android:textColor="#000000"
-        android:textSize="27sp"
+        android:textSize="35sp"
         android:textStyle="bold" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -30,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="320dp"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="680dp"
         android:contentDescription="addCar"
         android:onClick="addCar"
         app:backgroundTint="#FFEB3B"
@@ -40,12 +33,123 @@
         android:id="@+id/carProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginStart="30dp"
         android:tint="#040404"
-        android:background="@color/white"
+        android:background="@null"
         android:onClick="launch_serviceSchedule"
         app:srcCompat="@drawable/color_car" />
+
+    <ImageView
+        android:id="@+id/autominder_logo"
+        android:layout_width="136dp"
+        android:layout_height="495dp"
+        android:layout_marginBottom="550dp"
+        android:layout_marginLeft="20dp"
+        app:srcCompat="@drawable/carminder_logo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-100dp"
+        android:padding="20dp">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="300dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="#FFEB3B"
+            app:cardElevation="10dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/cal" />
+
+                <TextView
+                    android:id="@+id/appointment_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:includeFontPadding="false"
+                    android:text="N/A"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/appointment_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/appointment_label"
+                    android:layout_centerHorizontal="true"
+                    android:includeFontPadding="false"
+                    android:text="Appointments"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="300dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="#FFEB3B"
+            app:cardElevation="10dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/hist" />
+
+                <TextView
+                    android:id="@+id/history_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:includeFontPadding="false"
+                    android:text="N/A"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/history_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/history_label"
+                    android:layout_centerHorizontal="true"
+                    android:includeFontPadding="false"
+                    android:text="Past Services"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
 
 
 </RelativeLayout>

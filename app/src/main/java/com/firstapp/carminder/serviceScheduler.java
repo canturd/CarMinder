@@ -52,4 +52,9 @@ public class serviceScheduler extends AppCompatActivity {
         //start activity
         startActivity(popupScreen);
     }
+
+    public void cancel_activity(View view) {
+        //go back to previous activity
+        finish();
+    }
 }
