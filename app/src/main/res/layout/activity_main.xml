@@ -43,6 +43,7 @@
         android:layout_marginTop="300dp"
         android:layout_marginStart="20dp"
         android:tint="#040404"
+        android:background="@color/white"
         android:onClick="launch_serviceSchedule"
         app:srcCompat="@drawable/color_car" />
 

@@ -17,4 +17,9 @@ public class add_car extends AppCompatActivity {
         //go back to previous activity
         finish();
     }
+
+    public void add_car(View view) {
+        //add car to database
+        finish();
+    }
 }
