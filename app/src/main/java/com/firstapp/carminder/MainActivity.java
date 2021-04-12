@@ -8,24 +8,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-    Button button;
+//    public Button button;
+//    public ImageButton imageButton;
+//    public FloatingActionButton floatingButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_service_scheduler);
-
-        button = (Button) findViewById(R.id.oilChange_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+        setContentView(R.layout.activity_main);
 
 
 
@@ -45,7 +43,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(serviceScheduler);
     }
 
-
+    public void addCar(View view) {
+        Intent add_car = new Intent(this, add_car.class);
+        startActivity(add_car);
+    }
 
 
 }

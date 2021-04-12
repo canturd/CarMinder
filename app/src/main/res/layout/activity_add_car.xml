@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".add_car">
+
+    <EditText
+        android:id="@+id/car_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Model"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/car_year"
+        app:layout_constraintStart_toStartOf="@+id/car_year"
+        app:layout_constraintTop_toBottomOf="@+id/addCarLogo" />
+
+    <EditText
+        android:id="@+id/car_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
+        android:ems="10"
+        android:hint="Year"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/car_name"
+        app:layout_constraintStart_toStartOf="@+id/car_name"
+        app:layout_constraintTop_toBottomOf="@+id/car_model" />
+
+    <EditText
+        android:id="@+id/car_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/car_mileage"
+        app:layout_constraintEnd_toEndOf="@+id/car_mileage"
+        app:layout_constraintStart_toStartOf="@+id/car_mileage" />
+
+    <ImageView
+        android:id="@+id/addCarLogo"
+        android:layout_width="0dp"
+        android:layout_height="396dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="450dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/header_title"
+        app:srcCompat="@drawable/car" />
+
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="26dp"
+        android:text="@string/newCar"
+        android:textColor="#000000"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/addCarLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/car_make"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="37dp"
+        android:ems="10"
+        android:hint="Make"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/addCarLogo"
+        app:layout_constraintEnd_toEndOf="@+id/car_model"
+        app:layout_constraintStart_toStartOf="@+id/car_model" />
+
+    <EditText
+        android:id="@+id/car_mileage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="44dp"
+        android:ems="10"
+        android:hint="Starting Mileage"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/cancel_button"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="39dp"
+        android:onClick="cancel_activity"
+        android:text="Cancel"
+        android:textColor="#000000"
+        app:backgroundTint="#FFEB3B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/addCarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="94dp"
+        android:layout_marginBottom="39dp"
+        android:text="Add"
+        android:onClick="add_car"
+        android:textColor="#000000"
+        app:backgroundTint="#FFEB3B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

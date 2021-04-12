@@ -12,4 +12,6 @@
     <string name="rec_mileage">Recommended Mileage:</string>
     <string name="rec_part">Recommended Type:</string>
     <string name="est_cost">Estimated Cost:</string>
+    <string name="newCar">New Car</string>
+    <string name="my_garage">MY GARAGE</string>
 </resources>
