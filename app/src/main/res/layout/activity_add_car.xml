@@ -17,14 +17,15 @@
         app:layout_constraintStart_toStartOf="@+id/car_year"
         app:layout_constraintTop_toBottomOf="@+id/addCarLogo" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/car_year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="47dp"
         android:ems="10"
         android:hint="Year"
-        android:inputType="textPersonName"
+        android:completionThreshold="1"
+        android:dropDownAnchor="@id/car_year"
         app:layout_constraintEnd_toEndOf="@+id/car_name"
         app:layout_constraintStart_toStartOf="@+id/car_name"
         app:layout_constraintTop_toBottomOf="@+id/car_model" />
@@ -67,14 +68,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/car_make"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="37dp"
         android:ems="10"
         android:hint="Make"
-        android:inputType="textPersonName"
+        android:completionThreshold="1"
+        android:dropDownAnchor="@id/car_make"
         app:layout_constraintBottom_toBottomOf="@+id/addCarLogo"
         app:layout_constraintEnd_toEndOf="@+id/car_model"
         app:layout_constraintStart_toStartOf="@+id/car_model" />
