@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".add_car">
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/car_model"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Model"
-        android:inputType="textPersonName"
+        android:completionThreshold="1"
+        android:dropDownAnchor="@id/car_model"
         app:layout_constraintEnd_toEndOf="@+id/car_year"
         app:layout_constraintStart_toStartOf="@+id/car_year"
         app:layout_constraintTop_toBottomOf="@+id/addCarLogo" />

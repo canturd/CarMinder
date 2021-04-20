@@ -41,6 +41,43 @@
         <item>GMC</item>
     </string-array>
 
+    <string-array name="model">
+        <item>1500 Club Coupe</item>
+        <item>124 Spider</item>
+        <item>1 Series</item>
+        <item>100</item>
+        <item>300M</item>
+        <item>300ZX</item>
+        <item>323</item>
+        <item>350Z</item>
+        <item>4 Series</item>
+        <item>370Z</item>
+        <item>4Runner</item>
+        <item>5 Series</item>
+        <item>500</item>
+        <item>6 Series</item>
+        <item>626</item>
+        <item>7 Series</item>
+        <item>Tacoma</item>
+        <item>Corolla</item>
+        <item>Civic</item>
+        <item>CRV</item>
+        <item>Cherokee</item>
+        <item>Fusion</item>
+        <item>Forte</item>
+        <item>Focus</item>
+        <item>Prius</item>
+        <item>F-150</item>
+        <item>Wrangler</item>
+        <item>Edge</item>
+        <item>Focus</item>
+        <item>Galaxy</item>
+        <item>Mustang</item>
+        <item>Corvette</item>
+        <item>Camero</item>
+        <item>Taurus</item>
+        <item>Sierra</item>
+    </string-array>
 
     <string-array name="year">
         <item>1990</item>
@@ -76,7 +113,5 @@
         <item>2020</item>
         <item>2021</item>
     </string-array>
-
-
 
 </resources>

@@ -78,7 +78,7 @@
                     android:src="@drawable/cal" />
 
                 <TextView
-                    android:id="@+id/appointment_label"
+                    android:id="@+id/services_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -87,13 +87,13 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/appointment_desc"
+                    android:id="@+id/services_desc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/appointment_label"
+                    android:layout_below="@id/services_label"
                     android:layout_centerHorizontal="true"
                     android:includeFontPadding="false"
-                    android:text="Appointments"
+                    android:text="Scheduled Services"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="14sp" />
