@@ -3,6 +3,7 @@
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -31,6 +32,12 @@ public class popup extends AppCompatActivity {
         String serviceName = intent.getStringExtra("SERVICE_NAME");
         ((TextView)findViewById(R.id.serviceName)).setText(serviceName);
 
+        populate_rec_mileage(serviceName);
+
+    }
+
+    public void populate_rec_mileage(String serviceName)
+    {
         //populating popup screen recommended mileage fields
         String oil_mileage = "5,000";
         String brake_mileage = "50,000";
@@ -60,10 +67,6 @@ public class popup extends AppCompatActivity {
                 text.setText(Align_mileage);
                 break;
         }
-
-
-
-
-
     }
+
 }

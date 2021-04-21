@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -38,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
         List<AutoUser> autoUserList = db.autoUserDao().getMileage();
 
+        scheduled_services();
+        past_services();
+
     }
 
     public void launch_serviceSchedule(View view) {
@@ -48,6 +52,22 @@ public class MainActivity extends AppCompatActivity {
     public void addCar(View view) {
         Intent add_car = new Intent(this, add_car.class);
         startActivity(add_car);
+    }
+
+    //displays current/future scheduled services to home page
+    public void scheduled_services ()
+    {
+        int counter = 0;
+        TextView text = (TextView) findViewById(R.id.services_label);
+        text.setText(String.valueOf(counter));
+    }
+
+    //displays past scheduled services to home page
+    public void past_services ()
+    {
+        int counter = 0;
+        TextView text = (TextView) findViewById(R.id.history_label);
+        text.setText(String.valueOf(counter));
     }
 
 
