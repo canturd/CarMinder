@@ -31,6 +31,39 @@ public class popup extends AppCompatActivity {
         String serviceName = intent.getStringExtra("SERVICE_NAME");
         ((TextView)findViewById(R.id.serviceName)).setText(serviceName);
 
+        //populating popup screen recommended mileage fields
+        String oil_mileage = "5,000";
+        String brake_mileage = "50,000";
+        String spark_mileage = "30,000";
+        String tireChan_mileage = "50,000";
+        String tireRot_mileage = "3,000";
+        String Align_mileage = "6,000";
+        TextView text = (TextView) findViewById(R.id.mileage);
+        switch (serviceName)
+        {
+            case "Oil Change":
+                text.setText(oil_mileage);
+                break;
+            case "Brakes":
+                text.setText(brake_mileage);
+                break;
+            case "Spark Plugs":
+                text.setText(spark_mileage);
+                break;
+            case "Tire Change":
+                text.setText(tireChan_mileage);
+                break;
+            case "Tire Rotation":
+                text.setText(tireRot_mileage);
+                break;
+            case "Alignment":
+                text.setText(Align_mileage);
+                break;
+        }
+
+
+
+
 
     }
 }

@@ -24,7 +24,7 @@
 
     <TextView
         android:id="@+id/rec_mileage"
-        android:layout_width="217dp"
+        android:layout_width="200dp"
         android:layout_height="43dp"
         android:text="@string/rec_mileage"
         android:textAlignment="center"
@@ -35,6 +35,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.254" />
+
+    <TextView
+        android:id="@+id/mileage"
+        android:layout_width="217dp"
+        android:layout_height="43dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/rec_mileage"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.254" />
 

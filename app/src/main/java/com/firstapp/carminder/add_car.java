@@ -26,7 +26,13 @@ public class add_car extends AppCompatActivity {
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, years);
         editText1.setAdapter(adapter1);
 
-        //how to get input out of drop down
+        //set up drop down of models
+        String[] models = getResources().getStringArray(R.array.model);
+        AutoCompleteTextView editText2 = findViewById(R.id.car_model);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, models);
+        editText2.setAdapter(adapter2);
+
+        //how to get input out of drop down. this is what we might use to know what the user selected from the drop down to store it
         //String input = getText.getText().toString();
     }
 
