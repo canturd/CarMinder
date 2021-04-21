@@ -69,6 +69,20 @@
         android:textStyle="bold"/>
 
     <TextView
+        android:id="@+id/type"
+        android:layout_width="217dp"
+        android:layout_height="43dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toEndOf="@+id/rec_part"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.453" />
+
+    <TextView
         android:id="@+id/est_cost"
         android:layout_width="163dp"
         android:layout_height="40dp"
@@ -97,7 +111,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/serviceName"
         app:layout_constraintTop_toTopOf="parent"
-        android:checked="true"
+        android:checked="false"
         android:textStyle="bold"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 

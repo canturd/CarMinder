@@ -83,7 +83,6 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:includeFontPadding="false"
-                    android:text="N/A"
                     android:textSize="20sp" />
 
                 <TextView
@@ -130,7 +129,6 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:includeFontPadding="false"
-                    android:text="N/A"
                     android:textSize="20sp" />
 
                 <TextView
