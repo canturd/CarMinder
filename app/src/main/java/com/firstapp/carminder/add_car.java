@@ -1,13 +1,20 @@
 package com.firstapp.carminder;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class add_car extends AppCompatActivity {
+
+    private static final String TAG = "CreateCar";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +35,38 @@ public class add_car extends AppCompatActivity {
 
         //how to get input out of drop down
         //String input = getText.getText().toString();
+
+
+
+        final AutoUserDatabase db = Room.databaseBuilder(getApplicationContext(),
+                AutoUserDatabase.class, "autoUser-database").allowMainThreadQueries().build();
+
+        EditText carName;
+        EditText carMake;
+        EditText carModel;
+        EditText carYear;
+        EditText carMileage;
+        Button saveCar;
+
+        carName = findViewById(R.id.car_name);
+        carMake = findViewById(R.id.car_make);
+        carModel = findViewById(R.id.car_model);
+        carYear = findViewById(R.id.car_year);
+        carMileage = findViewById(R.id.car_mileage);
+        saveCar = findViewById(R.id.addCarButton);
+
+        saveCar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "onClick: name: " + carName.getText().toString());
+                Log.d(TAG, "onClick: make: " + carMake.getText().toString());
+                Log.d(TAG, "onClick: model: " + carModel.getText().toString());
+                db.autoUserDao().insertAll(new AutoUser(carMake.getText().toString(), carModel.getText().toString(), carName.getText().toString()));
+                startActivity(new Intent(add_car.this, MainActivity.class));
+            }
+
+        });
+
     }
 
     public void cancel_activity(View view) {
