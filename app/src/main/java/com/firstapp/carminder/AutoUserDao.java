@@ -16,8 +16,8 @@ public interface AutoUserDao {
     @Query("SELECT * FROM AutoUser")
     List<AutoUser> getMakeModelMileage();
 
-    @Query("SELECT * FROM AutoUser")
-    List<AutoUser> getMileage();
+   // @Query("SELECT * FROM AutoUser")
+   // List<AutoUser> getMileage();
 
 }
 

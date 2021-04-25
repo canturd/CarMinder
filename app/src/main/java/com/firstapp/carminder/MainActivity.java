@@ -6,6 +6,7 @@ import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -19,6 +20,9 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
+
 //    public Button button;
 //    public ImageButton imageButton;
 //    public FloatingActionButton floatingButton;
@@ -28,16 +32,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.d(TAG, "We in main");
 
 
         AutoUserDatabase db = Room.databaseBuilder(getApplicationContext(),
                 AutoUserDatabase.class, "autoUser-database").allowMainThreadQueries().build();
 
-        AutoUser car1 = new AutoUser("Honda", "Civic", 81000, 1997, false);
 
-        db.autoUserDao().insertAll(car1);
 
-        List<AutoUser> autoUserList = db.autoUserDao().getMileage();
 
         scheduled_services();
         past_services();

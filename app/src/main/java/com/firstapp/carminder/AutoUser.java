@@ -23,16 +23,53 @@ public class AutoUser {
     @ColumnInfo(name = "car_mileage")
     public int mileage;
 
+    @ColumnInfo(name = "car_name")
+    public String name;
+
     @ColumnInfo(name = "service")
     public boolean serviceCompleted;
 
     //public Service[] serviceArray;
 
-    public AutoUser(String make, String model, int mileage, int year, boolean serviceCompleted){
+//    public AutoUser(String make, String model, int mileage, int year, boolean serviceCompleted){
+//        this.make = make;
+//        this.model = model;
+//        this.year = year;
+//        this.mileage = mileage;
+//        this.serviceCompleted = serviceCompleted;
+//    }
+
+    public AutoUser(String make, String model, String name){
         this.make = make;
         this.model = model;
-        this.year = year;
-        this.mileage = mileage;
-        this.serviceCompleted = serviceCompleted;
+        this.name = name;
+    }
+
+    public int getUid() {
+        return uid;
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public int getMileage() {
+        return mileage;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public boolean isServiceCompleted() {
+        return serviceCompleted;
     }
 }
