@@ -1,6 +1,7 @@
 package com.firstapp.carminder;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
@@ -13,8 +14,10 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     ArrayList<AutoUser> cars;
+    int pastServicesCount = 0;
+    int scheduledServicesCount = 0;
 //    public Button button;
 //    public ImageButton imageButton;
 //    public FloatingActionButton floatingButton;
@@ -75,18 +80,17 @@ public class MainActivity extends AppCompatActivity {
     //displays current/future scheduled services to home page
     public void scheduled_services ()
     {
-        int counter = 0;
         TextView text = (TextView) findViewById(R.id.services_label);
-        text.setText(String.valueOf(counter));
+        text.setText(String.valueOf(scheduledServicesCount));
     }
 
     //displays past scheduled services to home page
     public void past_services ()
     {
-        int counter = 0;
         TextView text = (TextView) findViewById(R.id.history_label);
-        text.setText(String.valueOf(counter));
+        text.setText(String.valueOf(pastServicesCount));
     }
+
 
 
 }
