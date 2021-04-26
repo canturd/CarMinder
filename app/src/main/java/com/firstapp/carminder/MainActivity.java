@@ -1,6 +1,8 @@
 package com.firstapp.carminder;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 
@@ -16,6 +18,7 @@ import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -23,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
+    RecyclerView recyclerView;
+    RecyclerView.Adapter adapter;
+    ArrayList<AutoUser> cars;
 //    public Button button;
 //    public ImageButton imageButton;
 //    public FloatingActionButton floatingButton;
@@ -32,13 +38,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        recyclerView = findViewById(R.id.recycler_view);   // recyclerView thing
+
+
         Log.d(TAG, "We in main");
 
+
+        cars = new ArrayList<AutoUser>();
 
         AutoUserDatabase db = Room.databaseBuilder(getApplicationContext(),
                 AutoUserDatabase.class, "autoUser-database").allowMainThreadQueries().build();
 
 
+        List<AutoUser> cars = db.autoUserDao().getAllCars();
+
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this)); // this you just gotta do recyclerView Thing
+        adapter = new CarAdapter(cars);     // recyclerView thing
+        recyclerView.setAdapter(adapter);   // recyclerView thing
 
 
         scheduled_services();
