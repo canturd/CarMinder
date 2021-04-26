@@ -14,7 +14,7 @@ public interface AutoUserDao {
     void insertAll(AutoUser... autoUsers);
 
     @Query("SELECT * FROM AutoUser")
-    List<AutoUser> getMakeModelMileage();
+    List<AutoUser> getAllCars();
 
    // @Query("SELECT * FROM AutoUser")
    // List<AutoUser> getMileage();
