@@ -11,7 +11,7 @@
         android:id="@+id/garage_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="180dp"
+        android:layout_marginStart="180dp"
         android:layout_marginTop="95dp"
         android:text="@string/my_garage"
         android:textColor="#000000"
@@ -34,24 +34,24 @@
         android:layout_width="136dp"
         android:layout_height="495dp"
         android:layout_marginBottom="550dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         app:srcCompat="@drawable/carminder_logo" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="370dp"
-        android:layout_marginTop="360dp"
-        android:layout_weight="1">
+        android:layout_marginTop="360dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -63,10 +63,10 @@
 
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="0dp"
+            android:layout_width="100dp"
             android:layout_height="125dp"
             android:layout_marginTop="300dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_weight="1"
             app:cardBackgroundColor="#FFEB3B"
             app:cardElevation="10dp">
@@ -74,7 +74,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="118dp"
                 android:padding="5dp">
 
                 <ImageView
@@ -101,18 +101,17 @@
                     android:includeFontPadding="false"
                     android:text="Scheduled Services"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="0dp"
+            android:layout_width="100dp"
             android:layout_height="125dp"
             android:layout_marginTop="300dp"
-            android:layout_marginLeft="20dp"
             android:layout_weight="1"
             app:cardBackgroundColor="#FFEB3B"
             app:cardElevation="10dp">
@@ -126,8 +125,8 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
                     android:src="@drawable/hist" />
 
                 <TextView
@@ -147,8 +146,55 @@
                     android:includeFontPadding="false"
                     android:text="Past Services"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="100dp"
+            android:layout_height="125dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="300dp"
+            android:layout_weight="1"
+            android:onClick="launch_serviceSchedule"
+            app:cardBackgroundColor="#FFEB3B"
+            app:cardElevation="10dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/add_cal" />
+
+                <TextView
+                    android:id="@+id/new_service_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:includeFontPadding="false"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/new_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/new_service_label"
+                    android:layout_centerHorizontal="true"
+                    android:includeFontPadding="false"
+                    android:text="Schedule New Service"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 

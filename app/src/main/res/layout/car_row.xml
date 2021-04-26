@@ -26,7 +26,9 @@
         android:id="@+id/viewCarInfoButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Car" />
+        android:text="View Car"
+        android:backgroundTint="#FFEB3B"
+        android:textColor="@color/black"/>
 
 
 </LinearLayout>

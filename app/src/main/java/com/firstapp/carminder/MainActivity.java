@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
 
         scheduled_services();
         past_services();
-
     }
 
     public void launch_serviceSchedule(View view) {
