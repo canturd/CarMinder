@@ -14,7 +14,7 @@
         android:layout_marginStart="180dp"
         android:layout_marginTop="95dp"
         android:text="@string/my_garage"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold" />
 
@@ -33,8 +33,8 @@
         android:id="@+id/autominder_logo"
         android:layout_width="136dp"
         android:layout_height="495dp"
-        android:layout_marginBottom="550dp"
         android:layout_marginStart="20dp"
+        android:layout_marginBottom="550dp"
         app:srcCompat="@drawable/carminder_logo" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -75,6 +75,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="118dp"
+                android:background="#FFEB3B"
                 android:padding="5dp">
 
                 <ImageView
@@ -97,11 +98,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/services_label"
+                    android:layout_centerInParent="true"
                     android:layout_centerHorizontal="true"
                     android:includeFontPadding="false"
                     android:text="Scheduled Services"
                     android:textColor="@color/black"
-                    android:textSize="14sp"
+                    android:textSize="17sp"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -146,7 +148,7 @@
                     android:includeFontPadding="false"
                     android:text="Past Services"
                     android:textColor="@color/black"
-                    android:textSize="14sp"
+                    android:textSize="17sp"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -193,7 +195,7 @@
                     android:includeFontPadding="false"
                     android:text="Schedule New Service"
                     android:textColor="@color/black"
-                    android:textSize="14sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
             </RelativeLayout>

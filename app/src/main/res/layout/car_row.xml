@@ -8,19 +8,22 @@
         android:id="@+id/nameDis"
         android:textSize="24sp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/makeDis"
         android:textSize="14sp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/modelDis"
         android:textSize="14sp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/viewCarInfoButton"
