@@ -65,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
         adapter = new CarAdapter(cars);     // recyclerView thing
         recyclerView.setAdapter(adapter);   // recyclerView thing
 
+        Log.d(TAG, "We in main");
+        String carNameTemp = "Joe";
+        Log.d(TAG, "Retrieved Mileage from Joe: " + db.autoUserDao().getMileage(carNameTemp));
+
 
 
         past_services();

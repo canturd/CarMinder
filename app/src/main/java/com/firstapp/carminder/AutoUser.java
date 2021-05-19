@@ -4,6 +4,7 @@ package com.firstapp.carminder;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import androidx.room.Update;
 
 @Entity
 public class AutoUser {
@@ -18,10 +19,10 @@ public class AutoUser {
     public String model;
 
     @ColumnInfo(name = "year")
-    public int year;
+    public String year;
 
     @ColumnInfo(name = "car_mileage")
-    public int mileage;
+    public String mileage;
 
     @ColumnInfo(name = "car_name")
     public String name;
@@ -39,11 +40,16 @@ public class AutoUser {
 //        this.serviceCompleted = serviceCompleted;
 //    }
 
-    public AutoUser(String make, String model, String name){
+    public AutoUser(String make, String model, String year, String name, String mileage){
         this.make = make;
         this.model = model;
+        this.year = year;
         this.name = name;
+        this.mileage = mileage;
     }
+
+    @Update
+    public void updateMileage(AutoUser autoUser){};
 
     public int getUid() {
         return uid;
@@ -57,11 +63,11 @@ public class AutoUser {
         return model;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public int getMileage() {
+    public String getMileage() {
         return mileage;
     }
 
