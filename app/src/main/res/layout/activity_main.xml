@@ -146,7 +146,7 @@
                     android:layout_below="@id/history_label"
                     android:layout_centerHorizontal="true"
                     android:includeFontPadding="false"
-                    android:text="Past Services"
+                    android:text="Service Mileage"
                     android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold" />
