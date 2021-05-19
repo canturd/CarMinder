@@ -27,6 +27,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
         holder.carName.setText(cars.get(position).getName());
         holder.carMake.setText(cars.get(position).getMake());
         holder.carModel.setText(cars.get(position).getModel());
+        holder.carMileage.setText(cars.get(position).getMileage());
     }
 
     @Override
@@ -38,12 +39,14 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
         public TextView carName;
         public TextView carModel;
         public TextView carMake;
+        public TextView carMileage;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             carName = itemView.findViewById(R.id.nameDis);
             carModel = itemView.findViewById(R.id.modelDis);
             carMake = itemView.findViewById(R.id.makeDis);
+            carMileage = itemView.findViewById(R.id.mileageDis);
         }
     }
 }

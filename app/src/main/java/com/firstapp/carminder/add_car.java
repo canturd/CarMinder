@@ -67,7 +67,14 @@ public class add_car extends AppCompatActivity {
                 Log.d(TAG, "onClick: name: " + carName.getText().toString());
                 Log.d(TAG, "onClick: make: " + carMake.getText().toString());
                 Log.d(TAG, "onClick: model: " + carModel.getText().toString());
-                db.autoUserDao().insertAll(new AutoUser(carMake.getText().toString(), carModel.getText().toString(), carName.getText().toString()));
+                Log.d(TAG, "onClick: year: " + carYear.getText().toString());
+                Log.d(TAG, "onClick: mileage: " + carMileage.getText().toString());
+                db.autoUserDao().insertAll(new AutoUser(
+                        carMake.getText().toString(),
+                        carModel.getText().toString(),
+                        carYear.getText().toString(),
+                        carName.getText().toString(),
+                        carMileage.getText().toString()));
                 startActivity(new Intent(add_car.this, MainActivity.class));
             }
 

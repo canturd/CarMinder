@@ -16,8 +16,10 @@ public interface AutoUserDao {
     @Query("SELECT * FROM AutoUser")
     List<AutoUser> getAllCars();
 
-   // @Query("SELECT * FROM AutoUser")
-   // List<AutoUser> getMileage();
+    //@Query("SELECT * FROM AutoUser")
+    //List<AutoUser> getMileage();
 
+    @Query("SELECT car_mileage FROM Autouser WHERE car_name=:name")
+    String getMileage(String name);
 }
 

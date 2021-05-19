@@ -1,11 +1,13 @@
 package com.firstapp.carminder;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 
 public class serviceScheduler extends AppCompatActivity {
 
+    private static final String TAG = "serviceScheduler";
     //    private Button oilChange = (Button)findViewById(R.id.oilChange);
 //    private Button brakes = (Button)findViewById(R.id.brakes);
 //    private Button sparkPlugs = (Button)findViewById(R.id.sparkPlugs);
@@ -53,6 +56,13 @@ public class serviceScheduler extends AppCompatActivity {
         boolean checked6 = PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean("align_check", false);
         align_check.setChecked(checked6);
+
+
+
+        AutoUserDatabase db = Room.databaseBuilder(getApplicationContext(),
+                AutoUserDatabase.class, "autoUser-database").allowMainThreadQueries().build();
+
+        Log.d(TAG, "ServiceScheduler Joe's mileage is: " + db.autoUserDao().getMileage("Joe"));
     }
 
 
