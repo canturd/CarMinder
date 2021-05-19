@@ -1,12 +1,15 @@
- package com.firstapp.carminder;
+package com.firstapp.carminder;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 
+import android.app.Notification;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -28,11 +31,14 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.firstapp.carminder.MyNotificationChannel.CHANNEL_1_ID;
+import static com.firstapp.carminder.MyNotificationChannel.CHANNEL_2_ID;
+
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private static final String SHARED_PREF_NAME = "mypref";
-//    TextView Text_mileage;
+    //    TextView Text_mileage;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     ArrayList<AutoUser> cars;
@@ -47,15 +53,26 @@ public class MainActivity extends AppCompatActivity {
     public int alignNotifyMileage;
     public int[] serviceMileages =  {5000, 50000, 30000, 50000, 3000, 6000};
 
+    /*******************************************************************
+     * Notification
+     *******************************************************************/
+    private NotificationManagerCompat notificationManager;
+    //*******************************************************************
+
 //    public Button button;
 //    public ImageButton imageButton;
 //    public FloatingActionButton floatingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState); 
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //create My notification
+        notificationManager = NotificationManagerCompat.from(this);
+
         scheduled_services();
+        //remind_services();
         recyclerView = findViewById(R.id.recycler_view);   // recyclerView thing
 
 
@@ -70,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
 
         List<AutoUser> cars = db.autoUserDao().getAllCars();
 
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this)); // this you just gotta do recyclerView Thing
+        // this you just gotta do recyclerView Thing
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new CarAdapter(cars);     // recyclerView thing
         recyclerView.setAdapter(adapter);   // recyclerView thing
 
@@ -92,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
     public void addCar(View view) {
         Intent add_car = new Intent(this, add_car.class);
         startActivity(add_car);
+
     }
 
     //displays current/future scheduled services to home page
@@ -129,33 +147,40 @@ public class MainActivity extends AppCompatActivity {
         if (oil_checked == true)
         {
             count++;
-            setNotifyMileage();
+            //setNotifyMileage();
+            remind_services();
+
         }
         if (brake_check == true)
         {
             count++;
 
-            setNotifyMileage();
+            //setNotifyMileage();
+            remind_services();
         }
         if (spark_check == true)
         {
             count++;
-            setNotifyMileage();
+            //setNotifyMileage();
+            remind_services();
         }
         if (tireChan_check == true)
         {
             count++;
-            setNotifyMileage();
+            //setNotifyMileage();
+            remind_services();
         }
         if (tireRot_check == true)
         {
             count++;
-            setNotifyMileage();
+            //setNotifyMileage();
+            remind_services();
         }
         if (align_check == true)
         {
             count++;
-            setNotifyMileage();
+            //setNotifyMileage();
+            remind_services();
         }
 
 
@@ -216,12 +241,94 @@ public class MainActivity extends AppCompatActivity {
             return alignNotifyMileage;
         }
 
-    return 0;
+        return 0;
+    }
+
+    private void remind_services(){
+
+        AutoUserDatabase db = Room.databaseBuilder(getApplicationContext(),
+                AutoUserDatabase.class, "autoUser-database").allowMainThreadQueries().build();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        Boolean oil_checked = prefs.getBoolean("oil_check", false);
+        Boolean brake_check = prefs.getBoolean("brake_check", false);
+        Boolean spark_check = prefs.getBoolean("spark_check", false);
+        Boolean tireChan_check = prefs.getBoolean("tireChan_check", false);
+        Boolean tireRot_check = prefs.getBoolean("tireRot_check", false);
+        Boolean align_check = prefs.getBoolean("align_check", false);
+        startingMileage = Integer.parseInt(db.autoUserDao().getMileage("Canter"));
+
+        if (oil_checked == true)
+        {
+            if(serviceMileages[0]-startingMileage <= 300 || startingMileage > serviceMileages[0]){
+                sendOnChannel1(0,"Reminder",
+                        "You are due for the Oil Service!");
+            }
+        }
+        if (brake_check == true)
+        {
+            if(serviceMileages[1]-startingMileage <= 300 || startingMileage > serviceMileages[1]){
+                sendOnChannel1(1,"Reminder",
+                        "You are due for the Brakes Service!");
+            }
+
+        }
+        if (spark_check == true)
+        {
+            if(serviceMileages[2]-startingMileage <= 300 || startingMileage > serviceMileages[2]){
+                sendOnChannel2(2,"Reminder",
+                        "You are due for the Spark Plugs Service!");
+            }
+        }
+        if (tireChan_check == true)
+        {
+            if(serviceMileages[3]-startingMileage <= 300 || startingMileage > serviceMileages[3]){
+                sendOnChannel1(3,"Reminder",
+                        "You are due for the Tire Service!");
+            }
+        }
+        if (tireRot_check == true)
+        {
+            if(serviceMileages[4]-startingMileage <= 300 || startingMileage > serviceMileages[4]){
+                sendOnChannel2(4,"Reminder",
+                        "You are due for the Tire Rotation Service!");
+            }
+        }
+        if (align_check == true)
+        {
+            if(serviceMileages[5]-startingMileage <= 300 || startingMileage > serviceMileages[5]){
+                sendOnChannel1(5,"Reminder",
+                        "You are due for the Alignment Service!");
+            }
+        }
+    }
+
+    private void sendOnChannel1( int ID,
+            String textTitle, String textMessage) {
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)
+                .setSmallIcon(R.drawable.carminder_logo)
+                .setContentTitle(textTitle)
+                .setContentText(textMessage)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+
+        notificationManager.notify(ID,notification);
+    }
+
+    private void sendOnChannel2(int ID,
+            String textTitle, String textMessage) {
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_2_ID)
+                .setSmallIcon(R.drawable.carminder_logo)
+                .setContentTitle(textTitle)
+                .setContentText(textMessage)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+
+        notificationManager.notify(ID,notification);
     }
 
 
 
 
-
 }
-

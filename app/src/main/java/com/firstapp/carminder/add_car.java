@@ -1,8 +1,14 @@
 package com.firstapp.carminder;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.room.Room;
 
+import android.app.Activity;
+import android.app.Application;
+import android.app.Notification;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,16 +22,26 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static com.firstapp.carminder.MyNotificationChannel.CHANNEL_1_ID;
+import static com.firstapp.carminder.MyNotificationChannel.CHANNEL_2_ID;
+
 public class add_car extends AppCompatActivity {
 
     private static final String TAG = "CreateCar";
     private static final String SHARED_PREF_NAME = "mypref";
-
+    /*******************************************************************
+     * Notification
+     *******************************************************************/
+    private NotificationManagerCompat notificationManager;
+    //*******************************************************************
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_car);
+
+        //create My notification
+        notificationManager = NotificationManagerCompat.from(this);
 
         //set up drop down of makes
         String[] makes = getResources().getStringArray(R.array.makes);
@@ -101,6 +117,8 @@ public class add_car extends AppCompatActivity {
                         carYear.getText().toString(),
                         carName.getText().toString(),
                         carMileage.getText().toString()));
+                sendOnChannel1("New Car",
+                        carName.getText().toString()+"'s car successfully added!");
                 startActivity(new Intent(add_car.this, MainActivity.class));
             }
 
@@ -116,5 +134,31 @@ public class add_car extends AppCompatActivity {
     public void add_car(View view) {
         //add car to database
         finish();
+    }
+
+    private void sendOnChannel1(
+            String textTitle, String textMessage) {
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)
+                .setSmallIcon(R.drawable.carminder_logo)
+                .setContentTitle(textTitle)
+                .setContentText(textMessage)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+
+        notificationManager.notify(100,notification);
+    }
+
+    private void sendOnChannel2(
+            String textTitle, String textMessage) {
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_2_ID)
+                .setSmallIcon(R.drawable.carminder_logo)
+                .setContentTitle(textTitle)
+                .setContentText(textMessage)
+                .setPriority(NotificationCompat.PRIORITY_LOW)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+
+        notificationManager.notify(200,notification);
     }
 }
