@@ -13,7 +13,7 @@ import android.widget.Toast;
 
  public class popup extends AppCompatActivity {
      public int scheduledServicesCount = 0;
-     SwitchCompat switchCompat;
+
      @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +83,7 @@ import android.widget.Toast;
         {
             case "Oil Change":
                 text.setText(oil_mileage);
+
                 break;
             case "Brakes":
                 text.setText(brake_mileage);
