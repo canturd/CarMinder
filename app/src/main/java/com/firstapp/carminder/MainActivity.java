@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
     {
 
         TextView text = (TextView) findViewById(R.id.history_label);
-        text.setText(String.valueOf(oilNotifyMileage));
+        text.setText(String.valueOf(pastServicesCount));
     }
 
     public int checkCount() {
