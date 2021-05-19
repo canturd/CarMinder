@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);   // recyclerView thing
 
         Log.d(TAG, "We in main");
-        String carNameTemp = "Joe";
+        String carNameTemp = "MyCar";
         Log.d(TAG, "Retrieved Mileage from Joe: " + db.autoUserDao().getMileage(carNameTemp));
 
 
@@ -129,9 +129,8 @@ public class MainActivity extends AppCompatActivity {
     //displays past scheduled services to home page
     public void past_services ()
     {
-
         TextView text = (TextView) findViewById(R.id.history_label);
-        text.setText(String.valueOf(pastServicesCount));
+        text.setText(String.valueOf(oilNotifyMileage));
     }
 
     public int checkCount() {
@@ -147,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
         if (oil_checked == true)
         {
             count++;
-            //setNotifyMileage();
+            setNotifyMileage();
             remind_services();
 
         }
@@ -207,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
 //        startingMileage = prefs2.getString("car_mileage", "");
 
         //pastServicesCount=Integer.parseInt(startingMileage);
-        startingMileage = Integer.parseInt(db.autoUserDao().getMileage("Canter"));
+        startingMileage = Integer.parseInt(db.autoUserDao().getMileage("MyCar"));
 
         if (oil_checked == true)
         {
@@ -255,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
         Boolean tireChan_check = prefs.getBoolean("tireChan_check", false);
         Boolean tireRot_check = prefs.getBoolean("tireRot_check", false);
         Boolean align_check = prefs.getBoolean("align_check", false);
-        startingMileage = Integer.parseInt(db.autoUserDao().getMileage("Canter"));
+        startingMileage = Integer.parseInt(db.autoUserDao().getMileage("MyCar"));
 
         if (oil_checked == true)
         {
