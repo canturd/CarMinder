@@ -32,13 +32,10 @@
         android:layout_height="wrap_content"
         android:textColor="@color/black"/>
 
-    <Button
-        android:id="@+id/viewCarInfoButton"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Timeline"
-        android:backgroundTint="#FFEB3B"
-        android:textColor="@color/black"/>
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
 
 
 </LinearLayout>
